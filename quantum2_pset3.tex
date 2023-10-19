@@ -1,0 +1,177 @@
+ 
+\documentclass[12pt]{article}
+\usepackage{a4wide}
+\usepackage{color, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[document]{ragged2e}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage[braket, qm]{qcircuit}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{16pt}
+\renewcommand{\arraystretch}{1.9}
+\usepackage[english,greek]{babel}
+\usepackage{braket}
+\usepackage{mathtools}
+\usepackage{ragged2e}
+\renewcommand{\baselinestretch}{1.5}
+\input{epsf}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cancel}
+\usepackage{algorithm}
+\usepackage{animate}
+\usepackage[noend]{algpseudocode}
+
+\begin{document}
+
+\greektext
+
+\noindent\rule{\textwidth}{2pt}
+\begin{center}
+{\bf ΚΒΑΝΤΙΚΗ ΤΕΧΝΟΛΟΓΙΑ}\\ 
+{\bf 3o Σετ Ασκήσεων }\\
+{\bf Καλαμαράκης Θεόδωρος:} 2018030022\\
+\end{center}
+\rule{\textwidth}{.5pt}
+\noindent
+
+\begin{center}
+
+\end{center}
+ 
+ 
+
+\justifying
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{{\bfΑπόδειξη της σχέσης $6.7$}}
+    Απο την σχέση $(6.6)$ έχουμε :
+        \begin{align*}
+            H &= \sqrt{8E_cE_J}\left(\hat{c}^\dag \hat{c}+\frac{1}{2}\right) - E_J - \frac{E_c}{12}\left(\hat{c}^\dag+\hat{c}\right)^4   
+        \end{align*}
+        Αναπτύσσουμε το όρο $\left(\hat{c}^\dag+\hat{c}\right)^4$  κρατώντας μόνο τους όρους με ίσο αριθμό $\hat{c}^\dag$ και $\hat{c}$
+        \begin{align*}\left(\hat{c}^\dag+\hat{c}\right)^4 \approx \left(\hat{c}^\dag\right)^2\hat{c}^2 + \left(\hat{c}^\dag\hat{c}\right)^2 + \hat{c}^\dag\hat{c}^2\hat{c}^\dag +  \hat{c}\left(\hat{c}^\dag \right)^2\hat{c}+ \left(\hat{c}\hat{c}^\dag\right)^2+\hat{c}^2\left(\hat{c}^\dag\right)^2 \tag{1}\end{align*}
+        Γνωρίζουμε οτι $\hat{c} = \sum_j\sqrt{j+1}\ket{j}\bra{j+1}$ kai $\hat{c}^\dag = \sum_j\sqrt{j+1}\ket{j+1}\bra{j}$ 
+        Αρα 
+        $$
+ \left\{
+\begin{array}{lr}
+    \hat{c}^\dag\hat{c} = \sum_j(j+1)\ket{j+1}\bra{j+1}\\
+    \hat{c}\hat{c}^\dag = \sum_j(j+1)\ket{j}\bra{j}
+\end{array}
+\right\} \Leftrightarrow 
+\left\{
+    \begin{array}{lr}
+        \hat{c}^\dag\hat{c} = \sum_jj\ket{j}\bra{j}\\
+        \hat{c}\hat{c}^\dag = \sum_j(j+1)\ket{j}\bra{j}
+    \end{array}
+    \right\} \Rightarrow 
+$$
+$$\Rightarrow \hat{c}\hat{c}^\dag - \hat{c}^\dag\hat{c} = \sum_j(j+1)\ket{j}\bra{j} - \sum_jj\ket{j}\bra{j} = \sum_j\ket{j}\bra{j} = I$$ $$ \Leftrightarrow \hat{c}\hat{c}^\dag = \hat{c}^\dag\hat{c} +I $$
+Ξαναγράφουμε τους όρους τις $(1)$ με βάση την τελευταια εξίσωση
+\begin{itemize}
+    \item $$\left(\hat{c}^\dag\right)^2\hat{c}^2 = \hat{c}^\dag \left(\hat{c}\hat{c}^\dag -I\right)\hat{c} =  \left(\hat{c}^\dag\hat{c}\right)^2 -\hat{c}^\dag\hat{c}$$
+    \item $$\hat{c}^\dag\hat{c}^2\hat{c}^\dag  = \hat{c}^\dag \hat{c}\left(\hat{c}^\dag\hat{c} +I\right) =  \left(\hat{c}^\dag\hat{c}\right)^2 +\hat{c}^\dag\hat{c}$$
+    \item $$\hat{c}\left(\hat{c}^\dag \right)^2\hat{c}  =\left(\hat{c}^\dag\hat{c} +I\right) \hat{c}^\dag \hat{c} =  \left(\hat{c}^\dag\hat{c}\right)^2 +\hat{c}^\dag\hat{c}$$
+    \item $$\left(\hat{c}\hat{c}^\dag\right)^2  =\left(\hat{c}^\dag\hat{c} +I\right)^2  =  \left(\hat{c}^\dag\hat{c}\right)^2 +2\hat{c}^\dag\hat{c}+I$$
+    \item $$\hat{c}^2\left(\hat{c}^\dag\right)^2  =\hat{c} \left(\hat{c}^\dag\hat{c} +I\right)\hat{c}^\dag =  \left(\hat{c}\hat{c}^\dag\right)^2 +\hat{c}\hat{c}^\dag= \left(\hat{c}^\dag\hat{c}\right)^2 +2\hat{c}^\dag\hat{c}+I +\hat{c}^\dag\hat{c} +I = \left(\hat{c}^\dag\hat{c}\right)^2 +3\hat{c}^\dag\hat{c} +2I$$
+\end{itemize}
+Αρα η $(1)$ γράφεταο 
+\begin{align*}\left(\hat{c}^\dag+\hat{c}\right)^4 \approx  6\left(\hat{c}^\dag\hat{c}\right)^2 +6\hat{c}^\dag\hat{c} +3Ι\end{align*}
+Συνεπώς 
+\begin{align*}
+    H &= \sqrt{8E_cE_J}\left(\hat{c}^\dag \hat{c}+\frac{1}{2}\right) - E_J - \frac{E_c}{12}\left(\hat{c}^\dag+\hat{c}\right)^4  =\\
+    &= \sqrt{8E_cE_J}\left(\hat{c}^\dag \hat{c}+\frac{1}{2}\right) - E_J - \frac{E_c}{12}\left(6\left(\hat{c}^\dag\hat{c}\right)^2 +6\hat{c}^\dag\hat{c} +3Ι\right)=\\
+    &= \sqrt{8E_cE_J}\left(\hat{c}^\dag \hat{c}+\frac{1}{2}\right) - E_J - \frac{E_c}{2}\left(\left(\hat{c}^\dag\hat{c}\right)^2 +\hat{c}^\dag\hat{c} +\frac{1}{2}Ι\right)
+\end{align*}
+        Αγνοώντας τις σταθερές και θέτοντας $\omega_0 = \sqrt{8E_cE_J}$ και $\delta = -E_c$ έχουμε
+        \begin{align*}
+            H&=\omega_0\hat{c}^\dag \hat{c} +\frac{\delta}{2}\left(\left(\hat{c}^\dag\hat{c}\right)^2 +\hat{c}^\dag\hat{c}\right) = \left(\omega_0 +\frac{\delta}{2}\right)\hat{c}^\dag\hat{c} + \frac{\delta}{2}\left(\hat{c}^\dag\hat{c}\right)^2
+        \end{align*}
+\rule{\textwidth}{.5pt}
+\section*{{\bfΑπόδειξη της σχέσης $7.5$}}
+
+\begin{align*}
+    U\sigma^{\pm}U^\dag &= \left(I\cos(\omega_q t/2) - i\sigma^z\sin(\omega_q t/2)\right)\sigma^\pm\left(I\cos(\omega_q t/2) + i\sigma^z\sin(\omega_q t/2)\right) = \\
+    & = \cos^2(\omega_q t/2)I\sigma^\pm I + \cos(\omega_q t/2)\sin(\omega_q t/2)iI\sigma^\pm\sigma^z\\
+    & - \cos(\omega_q t/2)\sin(\omega_q t/2)i\sigma^z\sigma^\pm I+\sin^2(\omega_q t/2)\sigma^z\sigma^\pm\sigma^z \stackrel{(*)}{ = }\\
+    &\stackrel{(*)}{ = }\cos^2(\omega_q t/2)\sigma^\pm  \pm \cos(\omega_q t/2)\sin(\omega_q t/2)i\sigma^\pm\\
+    & \pm \cos(\omega_q t/2)\sin(\omega_q t/2)i\sigma^\pm -\sin^2(\omega_q t/2)\sigma^\pm =\\
+    & = \sigma^\pm \left(\cos^2(\omega_q t/2) \pm 2i\cos(\omega_q t/2)\sin(\omega_q t/2)-\sin^2(\omega_q t/2) \right) \stackrel{(**)}{=}\\
+    &\stackrel{(**)}{=}\sigma^\pm \left(\cos(\omega_q t)\pm i\sin(\omega t)\right) =\sigma^\pm e^{\pm i\omega_q t}
+\end{align*}
+
+Όπου στο σημείο $(*)$ χρησιμοποιούμε οτι 
+$$\sigma^\pm \sigma^z=-\sigma^z\sigma^\pm = \pm \sigma^\pm \textnormal{    και    }  \sigma^z \sigma^\pm \sigma^z =  - \sigma^z \sigma^z  \sigma^\pm = -I\sigma^\pm = -\sigma^\pm $$
+Αφού ο $\sigma^z$ είναι \textlatin{Hermitian} και \textlatin{Unitary}\\
+Στο σημειό $(**)$ χρησιμοποιούμε οτι $$\cos \theta = \cos^2 \frac{\theta}{2} - \sin^2 \frac{\theta}{2} \textnormal{   και   }  \sin \theta = 2\cos \frac{\theta}{2}\sin \frac{\theta}{2}$$
+\rule{\textwidth}{.5pt}
+\section*{{\bfΑπόδειξη της σχέσης $7.9$}}
+
+Απο τη σχέση $7.6$ έχουμε οτι:
+$$\hat{H}_{d,I}^{(RWA)} = -\hbar\left(\Omega e^{-i\Delta_q t} + \tilde{\Omega}e^{i(\omega_q + \omega_d)t}\right)\sigma^+ - \hbar\left(\Omega^* e^{i\Delta_q t} + \tilde{\Omega}^*e^{-i(\omega_q + \omega_d)t}\right)\sigma^-$$
+Αγνοώντας τους όρους $\omega_q +\omega_d$ η σχέση γίνεται: 
+$$\hat{H}_{d,I}^{(RWA)} = -\hbar\Omega e^{-i\Delta_q t}\sigma^+ - \hbar\Omega^* e^{i\Delta_q t}\sigma^- $$
+Aρα 
+\begin{align*}
+    \hat{H}_{d}^{(RWA)} &= U\hat{H}_{d,I}^{(RWA)}U^\dag = -\hbar\Omega e^{-i\Delta_q t}U\sigma^+U^\dag - \hbar\Omega^* e^{i\Delta_q t}U\sigma^-U^\dag \stackrel{(7.5)}{=}\\
+    &\stackrel{(7.5)}{=} -\hbar\Omega e^{-i\Delta_q t}e^{ i\omega_q t}\sigma^+  -\hbar\Omega^* e^{i\Delta_q t}e^{- i\omega_q t}\sigma^- =  \\
+    &=  -\hbar\Omega e^{i(-\omega_q + \omega_d+\omega_q) t}\sigma^+  -\hbar\Omega^*e^{i(\omega_q - \omega_d-\omega_q) t}\sigma^-=\\
+    &= -\hbar\Omega e^{+i \omega_d t}\sigma^+  -\hbar\Omega^* e^{-i \omega_d t}\sigma^-
+\end{align*}
+Άρα
+$$\hat{H}^{(RWA)}=\hat{H}_{0}+ \hat{H}_{d}^{(RWA)} = -\frac{1}{2}\hbar \omega_q\sigma^z -\hbar\Omega e^{i \omega_d t}\sigma^+  -\hbar\Omega^* e^{-i \omega_d t}\sigma^-$$
+\rule{\textwidth}{.5pt}
+\section*{{\bfΑπόδειξη της σχέσης $7.12$}}
+Aπο την $(7.10)$ έχουμε
+\begin{align*}
+    \hat{H}_{eff} &= U_d\hat{H}^{RWA}U_d^\dag - i\hbar U_d \dot{U}^\dag_d \stackrel{(7.9)}{=} \\
+    &=-\frac{1}{2}\hbar \omega_qU_d\sigma^zU_d^\dag -\hbar\Omega e^{i \omega_d t}U_d\sigma^+U_d^\dag  -\hbar\Omega^* e^{-i \omega_d t}U_d\sigma^-U_d^\dag - i\hbar U_d \dot{U}^\dag_d
+\end{align*}
+Δουλεύοντας το κάθε όρο ξεχωριστα:
+\begin{itemize}
+    \item Για τον όρο $\frac{1}{2}\hbar \omega_qU_d\sigma^zU_d^\dag$
+        \begin{align*}
+            U_d\sigma^zU_d^\dag&=e^{-i\omega_d t \sigma^z/2}\sigma^z e^{i\omega_d t \sigma^z/2} \stackrel{(*)}{=}\\
+            &= \left(e^{-i\omega_d t/2}\ket{0}\bra{0}+e^{i\omega_d t/2}\ket{1}\bra{1}\right)\left(\ket{0}\bra{0}-\ket{1}\bra{1}\right)\left(e^{i\omega_d t/2}\ket{0}\bra{0}+e^{-i\omega_d t/2}\ket{1}\bra{1}\right)=\\
+            &=\left(e^{-i\omega_d t/2}\ket{0}\bra{0}-e^{i\omega_d t/2}\ket{1}\bra{1}\right)\left(e^{i\omega_d t/2}\ket{0}\bra{0}+e^{-i\omega_d t/2}\ket{1}\bra{1}\right)=\\
+            &=e^{-i\omega_d t/2}e^{i\omega_d t/2}\ket{0}\bra{0}-e^{i\omega_d t/2}e^{-i\omega_d t/2}\ket{1}\bra{1} = \ket{0}\bra{0} - \ket{1}\bra{1} =\\
+            &= \sigma^z
+        \end{align*}
+
+    Όπου στο σημείο $(*)$ χρησιμοποιήσαμε οτι 
+    $$\sigma^z = \ket{0}\bra{0}-\ket{1}\bra{1} \textnormal{   και   } e^{-i\omega_d t \sigma^z/2} = e^{-i\omega_d t (+1)/2}\ket{0}\bra{0}+  e^{-i\omega_d t (-1)/2}\ket{1}\bra{1}$$
+    Αρα $\frac{1}{2}\hbar \omega_qU_d\sigma^zU_d^\dag = \frac{1}{2}\hbar \omega_q\sigma^z$
+    \item Για τον όρο $\hbar\Omega e^{i \omega_d t}U_d\sigma^+U_d^\dag$
+        $$\hbar\Omega e^{i \omega_d t}U_d\sigma^+U_d^\dag = \hbar\Omega e^{i \omega_d t}e^{-i\omega_d t \sigma^z/2}\sigma^+e^{i\omega_d t \sigma^z/2}$$
+        Απο την σχέση $(3.23)$ της διάλεξης \textlatin{Spin qubits and Rabi oscillations} έχουμε:
+        $$\hbar\Omega e^{i \omega_d t}e^{-i\omega_d t \sigma^z/2}\sigma^+e^{i\omega_d t \sigma^z/2} = \hbar\Omega e^{i \omega_d t}e^{-i\omega_d t }\sigma^+ = \hbar\Omega \sigma^+$$
+    \item Για τον όρο $\hbar\Omega^* e^{-i \omega_d t}U_d\sigma^-U_d^\dag $
+        \begin{align*}
+            \hbar\Omega^* e^{-i \omega_d t}U_d\sigma^-U_d^\dag &=  \hbar\Omega^* e^{-i \omega_d t}e^{-i\omega_d t \sigma^z/2}\sigma^-e^{i\omega_d t \sigma^z/2}\stackrel{(3.23)}{=}\\
+            &=\hbar\Omega^* e^{-i \omega_d t}e^{i\omega_d t }\sigma^- = \hbar\Omega^* \sigma^-
+        \end{align*}
+    \item Για τον όρο $i\hbar U_d \dot{U}^\dag_d $
+        \begin{align*}
+            i\hbar U_d \dot{U}^\dag_d &=  i\hbar e^{-i\omega_d t \sigma^z/2}\frac{d}{dt}e^{i\omega_d t \sigma^z/2}=-\frac{1}{2}\hbar \omega_d\left(e^{-i\omega_d t \sigma^z/2}\sigma^ze^{i\omega_d t \sigma^z/2}\right) \stackrel{(!)}{=}\\
+            &=-\frac{1}{2}\hbar \omega_d\sigma^z
+        \end{align*}
+        Όπου στο σημείο $(!)$ το γινόμενο μέσα στην παρένθεση έχει υπολογιστεί στον πρώτο όρο 
+    \end{itemize}
+
+    Άρα 
+    \begin{align*}
+        \hat{H}_{eff}&= -\frac{1}{2}\hbar \omega_q\sigma^z - \hbar\Omega \sigma^+ -\hbar\Omega^* \sigma^- + \frac{1}{2}\hbar \omega_d\sigma^z =\\
+        &=-\frac{1}{2}\hbar \Delta_q\sigma^z - \hbar\Omega \sigma^+ -\hbar\Omega^* \sigma^-
+    \end{align*}
+    Χρησιμοποιώντας την $(3.21)$ απο \textlatin{Spin qubits and Rabi oscillations} και θεωρώντας οτι $\Omega=\Omega^*$ παίρνουμε
+    \begin{align*}
+        \hat{H}_{eff}&= -\frac{1}{2}\hbar \Delta_q\sigma^z - \hbar\Omega \sigma^+ -\hbar\Omega^* \sigma^- = -\frac{1}{2}\hbar \Delta_q\sigma^z - \hbar\Omega (\sigma^+ + \sigma^-) =\\
+        &= -\frac{1}{2}\hbar \Delta_q\sigma^z - \hbar\Omega \sigma^x
+    \end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
